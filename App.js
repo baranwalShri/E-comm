@@ -1,31 +1,15 @@
 import React from "react";
 import  ReactDOM  from "react-dom/client";
-
-// const heading=React.createElement("h1",
-// {id:"heading",xyz:"xyz"},
-// "Hello world from React!");
-// const root=ReactDOM.createRoot(document.getElementById("root"));
-// console.log(heading);//object
-// //console.log(root)
-// root.render(heading);
-
-
-/*
-   <div id="parent">
-       <div id="child"> 
-         <h1>I m h1 tag!</h1>
-       </div>
-   </div>
-Render helps us to put object into pages
-ReactElement(object)=>HTML(Browser Understands)
-
-*/
-
-const parent=React.createElement("div",
-{id:"parent"},[React.createElement("div",{id:"child1"},
-[React.createElement("h1",{},"I m h1 tag"),React.createElement("h2",{},"I m h2 tag")],React.createElement("div",{id:"child2"},
-[React.createElement("h1",{},"I m h1 tag"),React.createElement("h2",{},"I m h2 tag")]))
-]);
-console.log(parent);
+//React.createElement=>React Element(JS Object)=>HTMLElement(render)
+const heading=React.createElement("h1",{id:"heading"},"Namaste React");
 const root=ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+//jsx is HTML like sytax which makes easier to create React Element
+//jsx not HTML in JS
+//jsx (transpiled before it reaches the JS engine)-PARCEL- Babel(converting jsx in react code)
+
+//JSX=>React.createElement=>React Element(js object)=>HTMLElement(while rendering)
+const jsxheading=(
+    <h1 id="heading">Namaste React using JSX</h1>
+);
+
+root.render(heading);
