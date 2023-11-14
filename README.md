@@ -1,4 +1,4 @@
-# Namaste React
+
 
 - run command npx parcel index.html
 # Parcel
@@ -54,4 +54,9 @@
  (Normal JS utility functions)
  - useState()- Superpowerful State Variables in react
  - useEffect()
+# two types of routing in web apps
+-Client side routing
+-server side routing
 
+
+ 

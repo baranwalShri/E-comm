@@ -6,26 +6,45 @@ const styleCard={
 const RestaurantCard=(props)=>{
     const {resData}=props;
   //** Optional chaining */
+  // console.log(resData.info);
   const {
     cloudinaryImageId,
     name,
     cuisines,
     avgRating,
     costForTwo,
-    deliveryTime
-  }=resData?.data;
+    
+  }=resData?.info;
+ // console.log( costForTwo)
+// 
     return (
-        <div className="res-card" style={styleCard}>
+      <div className="m-4 p-4 w-60  rounded-lg bg-gray-200 hover:bg-gray-500" >
   
-          <img className="res-logo" alt="res-logo" src={CDN_URL+ cloudinaryImageId}
-          />
-          
-          <h3>{name}</h3>
-          <h4>{cuisines.join(", ")}</h4>
-          <h4>{avgRating}</h4>
-          <h4>RS. {costForTwo/100} FOR TWO</h4>
-          <h4>arriving after {deliveryTime} minutes</h4>
-        </div>
-    );
+      <img className="rounded-lg" alt="res-logo" src={CDN_URL+ cloudinaryImageId}
+      />
+      
+      <h3 className="font-bold py-4 text-lg">{name}</h3>
+      <h4 className="font-medium">{cuisines.join(", ")}</h4>
+      <h4 className="font-medium">{avgRating}</h4>
+    
+      <h4 className="font-medium">{costForTwo} </h4>
+      
+    </div>
+    )      
   };
+
+//higher order component 
+//input - RestaurantCard =>RestaurantsCardPromoted
+
+export const withPromotedLabel=(RestaurantCard)=>{
+  return (props)=>{
+      return (
+              <div>
+                <label>Promoted</label>
+                <RestaurantCard {...props}/>
+              </div>
+      );
+  };
+}
+
   export default RestaurantCard;
