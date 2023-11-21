@@ -25,7 +25,7 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
     ); 
     const json = await data.json();
   //  console.log("apiData",json);
-    setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+     setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      setFilteredRestraunt(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("body rendered",listOfRestaurants);

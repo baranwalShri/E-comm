@@ -15,7 +15,7 @@ class About extends Component{
         //console.log("Parent Render")
         return(
             <div>
-             <h1>This is About class</h1>
+             {/* <h1>This is About class</h1> */}
              <UserClass name={"First (class)"} location={"Dehradun(class)"}/>
              {/* <UserClass name={"Second (class)"} location={"Dehradun(class)"}/> */}
             </div>

@@ -18,7 +18,7 @@ class UserClass extends React.Component{
     async componentDidMount(){
        // console.log(this.props.name+"child component did mount")
        const data=await fetch("https://api.github.com/users/ankit-kumar32");
-      const json=await data.json();
+       const json=await data.json();
      // console.log(json);
        this.setState({
                   userInfo:json,
@@ -32,7 +32,7 @@ class UserClass extends React.Component{
      
         return (
             <div className="user-card">
-                 <img src={avatar_url} />
+                 {/* <img src={avatar_url}  className="rounded-lg w-12" /> */}
                 {/* <h1>Count:{count}</h1>
                 <button onClick={()=>{
                     //Never update state variables directly
