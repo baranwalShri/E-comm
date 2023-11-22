@@ -1,7 +1,8 @@
 ## Foodie
 
 Link [Live](https://foodi-ee.netlify.app/).
-- run command npx parcel index.html
+
+<!--
 # Parcel
 
 - Dev Build
@@ -24,6 +25,24 @@ Link [Live](https://foodi-ee.netlify.app/).
 
 - on running command npx parcel build index.html there will be error to resolve that u need to remove main app.js from package.json 
 
+Two types of Export/Import
+
+ - Default Export/Import
+ export default component;
+ import component from "path";
+
+ - Named Export/Import
+ export const component;
+ import {component} from "path"
+
+ # two types of routing in web apps
+-Client side routing
+-server side routing
+
+-->
+
+
+
 # food-delivary-app 
 * Header
   -Logo
@@ -41,23 +60,13 @@ Link [Live](https://foodi-ee.netlify.app/).
   -Address
   -Contact
  
- Two types of Export/Import
-
- - Default Export/Import
- export default component;
- import component from "path";
-
- - Named Export/Import
- export const component;
- import {component} from "path"
+ 
 
  # React Hooks
  (Normal JS utility functions)
  - useState()- Superpowerful State Variables in react
  - useEffect()
-# two types of routing in web apps
--Client side routing
--server side routing
+
 
 # Redux Toolkit
 - install @reduxjs/toolkit and react-redux
