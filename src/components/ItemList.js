@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
+//import { removeListener } from "process";
 //const URL="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
  const ItemList=({items})=>{
    //console.log(items);
@@ -8,14 +9,20 @@ import { addItem } from "../utils/cartSlice";
     const dispatch=useDispatch();
     const handleAddItem=(item)=>{
       //dispatch an action
-      console.log(item);
+     // console.log(item);
       dispatch(addItem(item));
    }
 
+   const handleDeleteItem=(item)=>{
+    //dispatch an action
+   // console.log(item);
+    dispatch(removeItem(item));
+ }
+
    return (
         <div>
-           {items.map(item=>
-             <div key={item.card.info.id} className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"> 
+           {items.map((item,index)=>
+             <div key={item.card.info.id+index} className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"> 
             
                <div className="w-9/12">  
                 <div className="py-2">
@@ -26,12 +33,20 @@ import { addItem } from "../utils/cartSlice";
                </div>
              
             <div className="w-3/12 p-4">
-               <div className="absolute">
-                 <button className="p-2 mx-14 rounded-lg bg-black text-white shadow-lg m-auto" 
+               <div className="absolute flex  p-0 m-0">
+                
+                 <button className=" p-2 ml-2 rounded-lg bg-green-900 text-white shadow-lg m-auto" 
                    onClick={()=>handleAddItem(item)}
                  >
-                 Add +
+                  +
                  </button> 
+
+                 <button className="p-2 rounded-lg bg-red-700 text-white shadow-lg m-auto" 
+                   onClick={()=>handleDeleteItem(item)}
+                 >
+                  -
+                 </button> 
+
                </div>
                <img src={CDN_URL+item.card.info.imageId} />
             </div>

@@ -8,14 +8,14 @@ const Body=()=>{
  //state variable- super powerful variable
  //arr destructuring
    const [listOfRestaurants,setListOfRestaurants]=useState(resList);
-   //const [listOfRestaurants,setListOfRestaurants]=useState([]);
+  //const [listOfRestaurants,setListOfRestaurants]=useState([]);
    const [FilteredRestraunt,setFilteredRestraunt]=useState([]);
    const [searchText,setSearchText]=useState("");
 
 const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
 
-   useEffect(()=>{
-      fetchData();
+    useEffect(()=>{
+       fetchData();
    },[])
       
   
@@ -24,15 +24,15 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.3412041&lng=82.99821510000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     ); 
     const json = await data.json();
-  //  console.log("apiData",json);
+    console.log("apiData",json);
      setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      setFilteredRestraunt(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //console.log("body rendered",listOfRestaurants);
- const OnlineStatus=useOnlineStatus();
- if(OnlineStatus===false)return (
-  <h1>Looks like you're offline!! Please Check Your internet connection</h1>
- );
+   const OnlineStatus=useOnlineStatus();
+   if(OnlineStatus===false)return (
+    <h1>Looks like you're offline!! Please Check Your internet connection</h1>
+   );
 
  // console.log(listOfRestaurants);
   if(listOfRestaurants?.length===0){
@@ -54,7 +54,7 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
               const filtered_res=listOfRestaurants.filter((res)=>{
                    return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                 })
-         //  setListOfRestaurants(filtered_res);
+             setListOfRestaurants(filtered_res);
              setFilteredRestraunt(filtered_res);
             }}>
               search</button>
