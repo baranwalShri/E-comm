@@ -52,8 +52,8 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
              onClick={()=>{
                //Filter the restraunt cards and update the ui
                //searchtext
-              const filtered_res=listOfRestaurants.filter((res)=>{
-                   return res.info.name.toLowerCase().includes(searchText.toLowerCase());
+              const filtered_res=listOfRestaurants?.filter((res)=>{
+                   return res?.info?.name.toLowerCase().includes(searchText.toLowerCase());
                 })
              setListOfRestaurants(filtered_res);
              setFilteredRestraunt(filtered_res);
@@ -64,7 +64,7 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
           <div className="search m-4 p-4 flex items-center">
             <button className=" bg-gray-400 px-4 py-2 font-bold text-lg rounded-lg" 
             onClick={()=>{
-            const filtered_list=listOfRestaurants.filter((res)=>res.info.avgRating>3.8);
+            const filtered_list=listOfRestaurants?.filter((res)=>res?.info?.avgRating>3.8);
              setFilteredRestraunt(filtered_list);
             }}>
             Top Rated Restaurant
