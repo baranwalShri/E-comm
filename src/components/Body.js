@@ -21,7 +21,7 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
   
   const  fetchData=async()=>{
     const data = await fetch(
-
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.3412041&lng=82.99821510000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       'https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.3412041&lng=82.99821510000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     ); 
     const json = await data.json();
@@ -74,9 +74,9 @@ const RestaurantsCardPromoted=withPromotedLabel(RestaurantCard);
   
          </div>
          <div className="flex flex-wrap"> {
-             FilteredRestraunt.map((restaurant)=>
+             FilteredRestraunt?.map((restaurant)=>
              //dont use index as key rather use unique key id
-             <Link key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}> 
+             <Link key={restaurant?.info?.id} to={"/restaurants/"+restaurant?.info?.id}> 
 
              {/*  
              {
