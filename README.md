@@ -23,6 +23,8 @@ Link [Live](https://foodi-ee.netlify.app/).
 - Tree Shaking- remove unused code
 
 
+
+
 - on running command npx parcel build index.html there will be error to resolve that u need to remove main app.js from package.json 
 
 Two types of Export/Import
